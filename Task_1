@@ -1,0 +1,42 @@
+    #......................python code ......................
+ ...........#Task 1: Data Cleaning and Preprocessing........
+
+
+pip install pandas
+from IPython import get_ipython
+from IPython.display import display
+
+import pandas as pd
+file_path = "/content/pizza_dataset.xlsx"  
+xls = pd.ExcelFile(file_path)
+
+df = xls.parse(xls.sheet_names[0])   # Load the first sheet
+
+df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_') #  Rename column headers to be clean and uniform
+
+df = df.dropna()  #  Drop rows with any missing values
+
+df = df.drop_duplicates()  # Remove duplicate rows
+
+df['size'] = df['size'].str.strip().str.upper().replace({      #  Standardize text values
+
+    'MEDIUM': 'M', 'SMALL': 'S', 'LARGE': 'L'
+})
+df['delivery_status'] = df['delivery_status'].str.strip().str.title()
+
+df['order_date'] = pd.to_datetime(df['order_date'], errors='coerce')   #  Convert date formats
+
+
+df['quantity'] = pd.to_numeric(df['quantity'], errors='coerce')  #  Fix data types
+
+df['price'] = pd.to_numeric(df['price'], errors='coerce')
+
+df = df.reset_index(drop=True)   # Reset index if needed
+
+df.to_excel("cleaned_pizza_dataset.xlsx", index=False)  # Save the cleaned data to a new Excel file
+
+print(" Dataset cleaned and saved as 'cleaned_pizza_dataset.xlsx'")
+display(df)
+
+
+
