@@ -1,1 +1,58 @@
+Retail Business Performance & Profitability Analysis
+Objective
+This project analyzes retail transactional data to:
 
+Identify profit-draining categories and sub-categories
+
+Optimize inventory turnover
+
+Understand seasonal product behavior
+
+Provide actionable insights for improving profitability
+
+Tools & Technologies
+SQL – Data cleaning, transformation, and profit calculations
+
+Python (Pandas, Seaborn) – Correlation analysis and data preprocessing
+
+Power BI – Interactive dashboards and visual reports
+
+Project Workflow
+1. Data Import & Cleaning (SQL)
+Imported raw retail data into a SQL environment
+
+Cleaned missing/null records and standardized values
+
+2. Profit Margin Calculation (SQL)
+Created SQL queries to calculate:
+
+Sales, cost, and profit
+
+Profit margins by Category and Sub-Category
+
+3. Inventory Analysis & Correlation (Python)
+Loaded cleaned data from SQL into Pandas
+
+Analyzed the correlation between inventory days and profitability
+
+Used Seaborn to visualize relationships and trends
+
+4. Power BI Dashboard Development
+Designed an interactive dashboard with:
+
+Filters for Region, Product Type, and Season
+
+Visuals including bar charts, KPIs, heatmaps, and slicers
+
+Key metrics: profit margins, sales volume, inventory turnover
+
+5. Insights & Recommendations (PDF Report)
+Highlighted slow-moving and overstocked items
+
+Provided strategies such as:
+
+Discounts and clearance for slow sellers
+
+Adjustments to reorder points for high-profit items
+
+Stocking based on seasonal trends
